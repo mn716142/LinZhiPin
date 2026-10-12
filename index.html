@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Zhi Pin Lin — Audio Engineer, Media & Digital Portfolio">
+<title>ZHI PIN LIN — Portfolio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+:root{--ink:#172b3a;--blue:#315c8c;--sky:#78b8c9;--orange:#f2a65a;--paper:#f5f7f8;--white:#fff;--line:#d9e3e8;--muted:#637582}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Noto Sans TC",sans-serif;line-height:1.7}a{color:inherit;text-decoration:none}.wrap{width:min(1180px,88vw);margin:auto}
+.nav{position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);width:min(1120px,92vw);padding:12px 16px 12px 20px;border:1px solid #ffffffcc;background:#fffffff0;backdrop-filter:blur(18px);border-radius:999px;box-shadow:0 10px 35px #315c8c14;display:flex;align-items:center;justify-content:space-between}.logo{font-weight:800;font-size:12px;letter-spacing:.16em}.navlinks{display:flex;gap:22px;font-size:11px;color:#526875}.navlinks a:hover{color:var(--orange)}
+.hero{min-height:100vh;padding:120px 7vw 70px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:6vw;position:relative;overflow:hidden;background:linear-gradient(135deg,#f5f7f8 0 58%,#fff0dc 100%)}.hero:before{content:"";position:absolute;width:52vw;height:52vw;border:44px solid #78b8c933;border-radius:50%;right:-17vw;top:8vh}.hero:after{content:"";position:absolute;width:210px;height:210px;background:#f2a65a22;border-radius:50%;left:-80px;bottom:-60px}.kicker{color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.25em;margin-bottom:22px}.hero h1{font-size:clamp(64px,9.5vw,132px);line-height:.83;letter-spacing:-.075em;margin:0;font-weight:800;position:relative;z-index:1}.hero h1 span{color:var(--blue)}.hero .role{font-size:clamp(18px,2.2vw,28px);margin:30px 0 10px;font-weight:600}.hero .sub{color:var(--muted);max-width:570px;font-size:15px}.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 19px;border-radius:999px;border:1px solid #315c8c44;font-size:11px;font-weight:700;letter-spacing:.1em}.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}
+.photo-card{position:relative;z-index:2;max-width:420px;justify-self:end}.photo-card img{width:100%;display:block;border-radius:26px;box-shadow:0 28px 70px #172b3a20;aspect-ratio:4/5;object-fit:cover}.photo-label{position:absolute;left:-20px;bottom:25px;background:var(--orange);color:#172b3a;padding:12px 18px;border-radius:14px;font-size:11px;font-weight:800;letter-spacing:.1em;box-shadow:0 12px 30px #f2a65a55}
+section{padding:115px 0;border-top:1px solid var(--line)}.section-title{display:flex;align-items:end;justify-content:space-between;margin-bottom:48px}.section-title h2{margin:0;font-size:clamp(38px,5vw,68px);letter-spacing:-.055em;font-weight:600}.num{font-size:11px;color:var(--blue);letter-spacing:.18em}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw}.lead{font-size:clamp(22px,2.5vw,35px);line-height:1.35;font-weight:500}.quote{margin-top:26px;color:var(--orange);font-weight:800;letter-spacing:.08em}.body{color:var(--muted);font-size:15px;line-height:2}
+.timeline{border-top:1px solid var(--line)}.job{display:grid;grid-template-columns:165px 1fr 105px;gap:30px;padding:30px 0;border-bottom:1px solid var(--line)}.year{color:var(--blue);font-size:12px;font-weight:700}.job h3{margin:0 0 3px;font-size:21px}.company{color:#3f5967;font-size:13px;font-weight:600}.job p{margin:10px 0 0;color:var(--muted);font-size:13px}.badge{justify-self:end;align-self:start;border:1px solid #b8d5df;border-radius:99px;padding:5px 10px;color:var(--blue);font-size:10px}
+.audio{display:grid;grid-template-columns:1.1fr .9fr;gap:35px;align-items:stretch}.audio-img{min-height:470px;border-radius:24px;overflow:hidden;position:relative;background:#1b2932}.audio-img img{width:100%;height:100%;object-fit:cover;display:block}.audio-overlay{position:absolute;inset:auto 0 0;padding:28px;background:linear-gradient(transparent,#10202ccc);color:white}.audio-overlay b{font-size:24px}.audio-copy{padding:12px 4px}.audio-copy h3{font-size:32px;margin:0 0 12px}.audio-copy p{color:var(--muted)}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}.pill{background:#e7f2f5;color:var(--blue);padding:7px 11px;border-radius:99px;font-size:11px;font-weight:700}.pill.orange{background:#fff0dc;color:#a85d17}
+.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.skill{background:white;padding:28px 22px;min-height:180px}.skill:nth-child(1){border-top:4px solid var(--blue)}.skill:nth-child(2){border-top:4px solid var(--orange)}.skill:nth-child(3){border-top:4px solid var(--sky)}.skill:nth-child(4){border-top:4px solid #e77d65}.skill:nth-child(5){border-top:4px solid #6b8f71}.skill b{font-size:15px}.skill p{font-size:12px;color:var(--muted);margin:12px 0 0;line-height:1.9}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu-card{background:white;border:1px solid var(--line);padding:28px;border-radius:20px}.edu-card .date{font-size:11px;color:var(--orange);font-weight:800}.edu-card h3{margin:10px 0 4px;font-size:21px}.edu-card p{margin:0;color:var(--muted);font-size:13px}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:18px}.cert{background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden}.cert img{width:100%;height:310px;object-fit:cover;object-position:center;display:block}.cert-info{padding:20px}.cert-info h3{margin:0 0 7px;font-size:17px}.cert-info p{margin:0;color:var(--muted);font-size:12px}
+.philosophy{background:var(--blue);color:white;border-radius:28px;padding:55px;position:relative;overflow:hidden}.philosophy:after{content:"";position:absolute;width:280px;height:280px;border:40px solid #78b8c944;border-radius:50%;right:-90px;top:-80px}.philosophy h2{font-size:clamp(34px,5vw,64px);margin:0 0 12px;letter-spacing:-.05em}.philosophy p{max-width:700px;color:#dcecf2}.contact{padding:140px 0 100px;text-align:center;background:linear-gradient(180deg,var(--paper),#fff3e4)}.contact h2{font-size:clamp(50px,8vw,105px);line-height:.9;letter-spacing:-.07em;margin:0 0 25px}.contact p{color:var(--muted)}.contact .email{font-size:18px;font-weight:700;color:var(--blue);display:inline-block;margin-top:15px}.footer{border-top:1px solid var(--line);padding:24px 0;color:#758692;font-size:10px;display:flex;justify-content:space-between}
+
+.youtube-preview{background:#172b3a;border-radius:24px;overflow:hidden;min-height:360px;position:relative;box-shadow:0 18px 45px #172b3a18}
+.youtube-preview a{display:block;position:relative;width:100%;height:100%;min-height:360px}
+.youtube-preview img{width:100%;height:360px;display:block;object-fit:cover}
+.youtube-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:74px;height:52px;border-radius:16px;background:#ff0033;color:#fff;display:grid;place-items:center;font-size:25px;padding-left:4px;box-shadow:0 12px 30px #0005}
+.youtube-caption{position:absolute;left:18px;bottom:18px;background:#172b3acc;color:#fff;border:1px solid #ffffff33;border-radius:999px;padding:8px 13px;font-size:10px;font-weight:800;letter-spacing:.1em}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:130px}.photo-card{justify-self:stretch;max-width:none}.hero:before{width:90vw;height:90vw;right:-35vw}.about-grid,.audio,.edu,.certs{grid-template-columns:1fr}.skills{grid-template-columns:repeat(2,1fr)}.job{grid-template-columns:1fr;gap:7px}.badge{justify-self:start}.audio-img{min-height:330px}.philosophy{padding:35px}.footer{display:block}.footer span{display:block;margin-top:8px}}
+@media(max-width:520px){.skills{grid-template-columns:1fr}.hero h1{font-size:62px}.wrap{width:90vw}section{padding:80px 0}}
+</style>
+</head>
+<body>
+<nav class="nav"><a class="logo" href="#top">ZHI PIN LIN</a><div class="navlinks"><a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#audio">AUDIO</a><a href="#skills">SKILLS</a><a href="#ai-music">AI MUSIC</a><a href="#credentials">CREDENTIALS</a><a href="#contact">CONTACT</a></div></nav>
+
+<header class="hero" id="top">
+<div class="wrap" style="width:auto;margin:0"><div class="kicker">AUDIO · MEDIA · DIGITAL</div><h1>ZHI<br><span>PIN LIN</span></h1><div class="role">Audio Engineer · Media Production · Digital Creator</div><div class="sub">10+ 年電視節目與現場音訊製作經驗。從 Live 新聞、棚內錄影、網路直播到 PA 系統，專注於穩定執行、風險預判與流程優化。</div><div class="ctas"><a class="btn primary" href="#experience">VIEW EXPERIENCE</a><a class="btn" href="mailto:mn716142@gmail.com">CONTACT ME</a></div></div>
+<div class="photo-card"><img src="assets/profile-web.jpg" alt="Zhi Pin Lin 個人照片"><div class="photo-label">CREATIVE / PRODUCTION</div></div>
+</header>
+
+<section id="about"><div class="wrap"><div class="section-title"><h2>About Me</h2><div class="num">01 / 08</div></div><div class="about-grid"><div><div class="lead">流程順利不是自然發生，而是準備、判斷與經驗累積的結果。</div><div class="quote">PREPARE · PERFORM · IMPROVE</div></div><div class="body">節目錄影流程繁雜且瑣碎，需要面對突發狀況與不同的人為因素。我一直把「提前降低潛在風險」當作工作核心，在多變環境中保持冷靜，並透過事前準備、現場執行與事後檢討，不斷改善工作流程。<br><br>除了成音工程，我也持續累積影音剪輯、視覺設計、數位工具與 AI 應用能力，希望把多年媒體現場經驗延伸到更多元的內容製作。</div></div></div></section>
+
+<section id="experience"><div class="wrap"><div class="section-title"><h2>Experience</h2><div class="num">02 / 08</div></div><div class="timeline">
+<div class="job"><div class="year">2022.01 — 2026.04<br>4 Y 4 M</div><div><h3>成音師</h3><div class="company">媒體棧國際行銷事業股份有限公司</div><p>電視節目錄影、成音工作與現場音訊執行。</p></div><div class="badge">TV PRODUCTION</div></div>
+<div class="job"><div class="year">2019.06 — 2022.01<br>2 Y 8 M</div><div><h3>成音師</h3><div class="company">TBC / T.studio 4K · 8K</div><p>PA 音響相關工程、電視節目錄製、網路直播。曾參與《命運好好玩》、《新聞哇哇哇》、《挑戰吧大神》等節目。</p></div><div class="badge">LIVE / PA</div></div>
+<div class="job"><div class="year">2016.06 — 2019.06<br>3 Y 1 M</div><div><h3>成音助理</h3><div class="company">中視｜中國電視事業股份有限公司</div><p>PA 音響相關工程、新聞節目錄製與直播新聞節目。</p></div><div class="badge">NEWS / LIVE</div></div>
+</div></div></section>
+
+<section id="audio"><div class="wrap"><div class="section-title"><h2>Audio Engineering</h2><div class="num">03 / 08</div></div><div class="audio"><div class="audio-img"><img src="assets/audio-console.jpg" alt="Audio Console 工作現場"><div class="audio-overlay"><b>ON AIR / IN PRODUCTION</b><br><span>Television · Live Broadcast · PA</span></div></div><div class="audio-copy"><h3>現場，是最直接的專業。</h3><p>長期在電視節目與直播環境中工作，熟悉節目錄影流程、PA 基本系統與現場音訊處理。新聞 Live 節目需要即時配合 PD／AD Cue；預錄節目則更重視事前準備與細節控制。</p><div class="pillrow"><span class="pill">PA SYSTEM</span><span class="pill">LIVE AUDIO</span><span class="pill">TV RECORDING</span><span class="pill">BROADCAST</span><span class="pill orange">RISK CONTROL</span><span class="pill orange">FLOW OPTIMIZATION</span></div></div></div></div></section>
+
+<section id="skills"><div class="wrap"><div class="section-title"><h2>Skills</h2><div class="num">04 / 08</div></div><div class="skills">
+<div class="skill"><b>Audio</b><p>PA 基本系統、電視節目成音、直播音訊、現場音訊流程。</p></div>
+<div class="skill"><b>Video</b><p>Premiere Pro、CapCut、PowerDirector、影音製作、短影音、字幕與基礎特效。</p></div>
+<div class="skill"><b>Design</b><p>Adobe Photoshop、Illustrator、圖片修圖、平面設計與簡易視覺製作。</p></div>
+<div class="skill"><b>Office</b><p>Word、Excel、PowerPoint、文書處理與排版；具乙級電腦軟體應用技術士。</p></div>
+<div class="skill"><b>AI</b><p>文案、圖像、音樂生成與內容規劃。AI 是輔助工具，保留人的判斷與品質把關。</p></div>
+</div></div></section>
+
+<section id="ai-music"><div class="wrap">
+  <div class="section-title"><h2>AI Music</h2><div class="num">05 / 09</div></div>
+  <div class="audio" style="grid-template-columns:1fr 1fr">
+    <div class="audio-copy" style="padding:10px 0">
+      <div class="kicker">AI APPLICATION · MUSIC PRODUCTION</div>
+      <h3>從乾淨 Demo，到新的聲音版本。</h3>
+      <p>以原始、乾淨的音樂 Demo 作為起點，利用 AI 進行修改與聲音元素添加，嘗試延伸編曲、氛圍與音樂表現。</p>
+      <p>這裡展示的是 AI 輔助音樂製作的實際案例。AI 作為創作工具，最後仍由人進行方向判斷、選擇與品質把關。</p>
+      <div class="pillrow"><span class="pill">AI MUSIC</span><span class="pill">DEMO EDIT</span><span class="pill">ARRANGEMENT</span><span class="pill orange">HUMAN CURATION</span></div>
+      
+    </div>
+    <div class="youtube-preview">
+      <a href="https://www.youtube.com/watch?v=u_EtCRXyysQ" target="_blank" rel="noopener" aria-label="在 YouTube 播放 AI Music Demo">
+        <img src="https://i.ytimg.com/vi/u_EtCRXyysQ/maxresdefault.jpg" alt="AI Music Demo YouTube 預覽圖">
+        <span class="youtube-play">▶</span>
+        <span class="youtube-caption">WATCH ON YOUTUBE ↗</span>
+      </a>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap"><div class="section-title"><h2>Education</h2><div class="num">06 / 09</div></div><div class="edu">
+<div class="edu-card"><div class="date">2011.09 — 2015.06</div><h3>私立醒吾科技大學</h3><p>資訊傳播學系｜四技畢業</p><p style="margin-top:14px">系學會副會長、畢籌會長；參與迎新、聖誕活動、畢業展，並曾組樂團擔任貝斯手。</p></div>
+<div class="edu-card"><div class="date">HIGH SCHOOL</div><h3>基隆二信高中</h3><p>資料處理科｜高職畢業</p><p style="margin-top:14px">簡報表格、文書處理與電腦應用基礎。</p></div>
+</div></div></section>
+
+<section id="credentials"><div class="wrap"><div class="section-title"><h2>Credentials</h2><div class="num">07 / 09</div></div><div class="certs">
+<div class="cert"><img src="assets/adobe-cert.jpg" alt="Adobe Certified Associate 證照"><div class="cert-info"><h3>Adobe Certified Associate</h3><p>Web Communication using Adobe Dreamweaver CS5<br>Visual Communication using Adobe Photoshop CS5</p></div></div>
+<div class="cert"><img src="assets/tech-cert-public.jpg" alt="電腦軟體應用技術士證照（已遮蔽個資）"><div class="cert-info"><h3>電腦軟體應用技術士</h3><p>乙級／丙級｜公開展示版已遮蔽個人識別資料。</p></div></div>
+</div><div class="edu" style="margin-top:18px"></div></div></section>
+
+<section><div class="wrap"><div class="philosophy"><h2>Prepare.<br>Perform.<br>Improve.</h2><p>沒有在前進的時刻，即是在退步。面對新的節目、新的議題與新的工具，保持學習、檢討與調整，是我持續累積專業的方法。</p></div></div></section>
+
+<section id="contact" class="contact"><div class="wrap"><div class="num">09 / 09</div><h2>LET'S<br>WORK.</h2><p>目前開放新的工作與合作機會。
+<footer><div class="wrap footer"><span>ZHI PIN LIN / AUDIO · MEDIA · DIGITAL</span><span>© 2026 PORTFOLIO</span></div></footer>
+</body></html>
