@@ -256,10 +256,102 @@ section{padding:115px 0;border-top:1px solid var(--line)}.section-title{display:
   }
 }
 
+
+/* Mobile navigation: compact header with a clear dropdown menu */
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 38px;
+  flex: 0 0 40px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+.menu-toggle span {
+  display: block;
+  width: 17px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--blue);
+  transition: transform .2s ease, opacity .2s ease;
+}
+@media (max-width: 850px) {
+  .nav {
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 18px;
+  }
+  .nav .logo {
+    font-size: 11px;
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+  }
+  .nav .navlinks {
+    display: none;
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 12px;
+    gap: 4px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    background: #fffffff7;
+    border: 1px solid #d9e3e8;
+    border-radius: 18px;
+    box-shadow: 0 16px 35px #172b3a1c;
+    backdrop-filter: blur(18px);
+  }
+  .nav.menu-open .navlinks {
+    display: grid;
+  }
+  .nav .navlinks a {
+    min-width: 0;
+    padding: 12px 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    line-height: 1.3;
+    text-align: center;
+    background: #f5f7f8;
+  }
+  .nav .navlinks a:active,
+  .nav .navlinks a:hover {
+    background: #fff0dc;
+    color: var(--blue);
+  }
+  .nav.menu-open .menu-toggle span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  .nav.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav.menu-open .menu-toggle span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+}
+
 </style>
 </head>
 <body>
-<nav class="nav"><a class="logo" href="#top">ZHI PIN LIN</a><div class="navlinks"><a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#audio">AUDIO</a><a href="#skills">SKILLS</a><a href="#ai-music">AI MUSIC</a><a href="#credentials">CREDENTIALS</a><a href="#contact">CONTACT</a></div></nav>
+<nav class="nav" id="site-nav">
+<a class="logo" href="#top">ZHI PIN LIN</a>
+<button class="menu-toggle" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="site-navlinks">
+<span></span><span></span><span></span>
+</button>
+<div class="navlinks" id="site-navlinks">
+<a href="#about">ABOUT</a><a href="#experience">EXPERIENCE</a><a href="#audio">AUDIO</a><a href="#skills">SKILLS</a><a href="#ai-music">AI MUSIC</a><a href="#credentials">CREDENTIALS</a><a href="#contact">CONTACT</a>
+</div>
+</nav>
 
 <header class="hero" id="top">
 <div class="wrap" style="width:auto;margin:0"><div class="kicker">AUDIO · MEDIA · DIGITAL</div><h1>ZHI<br><span>PIN LIN</span></h1><div class="role">Audio Engineer · Media Production · Digital Creator</div><div class="sub">10+ 年電視節目與現場音訊製作經驗。從 Live 新聞、棚內錄影、網路直播到 PA 系統，專注於穩定執行、風險預判與流程優化。</div><div class="ctas"><a class="btn primary" href="#experience">VIEW EXPERIENCE</a><a class="btn" href="mailto:mn716142@gmail.com">CONTACT ME</a></div></div>
@@ -319,4 +411,31 @@ section{padding:115px 0;border-top:1px solid var(--line)}.section-title{display:
 
 <section id="contact" class="contact"><div class="wrap"><div class="num">09 / 09</div><h2>LET'S<br>WORK.</h2><p>目前開放新的工作與合作機會。
 <footer><div class="wrap footer"><span>ZHI PIN LIN / AUDIO · MEDIA · DIGITAL</span><span>© 2026 PORTFOLIO</span></div></footer>
+
+<script>
+(() => {
+  const nav = document.getElementById('site-nav');
+  const toggle = nav && nav.querySelector('.menu-toggle');
+  const links = nav && nav.querySelectorAll('.navlinks a');
+  if (!nav || !toggle) return;
+  const closeMenu = () => {
+    nav.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', '開啟導覽選單');
+  };
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('menu-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? '關閉導覽選單' : '開啟導覽選單');
+  });
+  links.forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', event => {
+    if (!nav.contains(event.target)) closeMenu();
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 850) closeMenu();
+  });
+})();
+</script>
+
 </body></html>
